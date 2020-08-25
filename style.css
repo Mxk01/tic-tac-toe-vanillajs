@@ -1,0 +1,59 @@
+.row
+{
+  display:flex;
+  flex-direction: row;
+}
+
+.row .choice
+{
+  background-color: #3c6382 ;
+  width:7vw;
+  height:10vh;
+  margin:5px;
+  padding:1rem;
+  font-size:3rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Alata', sans-serif;
+  transition: background-color 0.3s ease;
+  color:#b8e994;
+  font-weight:200;
+
+}
+
+.row .choice:hover
+{
+  background-color:#079992;
+  cursor:pointer;
+}
+#main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+#btn
+{
+  padding:1rem;
+  border:none;
+  background-color:orange;
+  color:white;
+  width:350px;
+  margin-bottom:20px;
+  outline:none;
+}
+
+body
+{
+  background-color:#192a56;
+}
+
+.display-winner
+{
+  color:white;
+    font-family: 'Alata', sans-serif;
+}
