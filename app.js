@@ -1,78 +1,82 @@
-let choices = document.querySelectorAll('.choice');
-let displayWinner = document.querySelector('.display-winner');
-let clearBtn = document.getElementById('btn');
-let swap = document.getElementById('switch');
-let currentPlayer;
-let box1 = document.querySelector(".choice-1"),
-    box2 = document.querySelector(".choice-2"),
-    box3 = document.querySelector(".choice-3"),
-    box4 = document.querySelector(".choice-4"),
-    box5 = document.querySelector(".choice-5"),
-    box6 = document.querySelector(".choice-6"),
-    box7 = document.querySelector(".choice-7"),
-    box8 = document.querySelector(".choice-8"),
-    box9 = document.querySelector(".choice-9");
+var currentCombo =[]; 
+let currentComboChanged = false; 
+let turnMessage = document.getElementById('turn__message')
+let rows =document.querySelectorAll('.row');
 
+ let getBoxCoordinates = (box) => {
+ let n=3;
 
-function clear()
-{
-choices.forEach((choice)=>{ choice.textContent = ''; });
+console.log(box)
+
+ let xTurn = true;
+   
+//  box.style.background = 'yellow';
+ box.style.backgroundSize ='cover';
+//  box.classList.append('disabledRow');
+if(xTurn){
+  box.style.background = `url(https://www.howitworksdaily.com/wp-content/uploads/2015/08/131216Cute-dog-sticking-out-his-tongue-wallpaper-200x200.jpg)`;
+  turnMessage.innerText = `Doggo's turn!` 
 }
+ else{
+  box.style.background = `url(https://www.dogalize.com/wp-content/uploads/2017/07/happy-cat-200x200.jpg)`;
 
-function  winOptions(b1,b2,b3)
-{
-return b1.innerHTML!='' && b2.innerHTML!='' && b3.innerHTML!='';
-}
+ }
+  let cIndex = parseInt(box.getAttribute('data-column-index'));
+  let rIndex =  parseInt(box.getAttribute('data-row-index'))
 
-function comboHandler(e)
-{
- // let turn; // Variable to keep track of user turn;
- // let {playerTurn} = switchTurn(turn); // When I call this playerTurn will always be true on each click;
- //
- //  // console.log(playerTurn);
+  let xCombos,yCombos;
+   let coordinate =  [cIndex,rIndex]; 
 
+   localStorage.setItem('combo',coordinate);
+     // for the principal diagonal 
+     if(rIndex == cIndex){
+      // console.log('Diagonala Principala')
 
-  let userChoice = e.target.className.split(' ')[1].split('-')[1];
-  console.log(`Clicked ${ typeof userChoice}`);
+    }
+     // for the secondary diagonal
+     if(rIndex+cIndex==n+1){
+ 
+     }
 
- let box = e.target;
- box.textContent = 'X';
-
-
-let choices =
-{
-  mainRow:   winOptions(box1,box2,box3),
-  secondRow: winOptions(box4,box5,box6),
-  thirdRow:  winOptions(box7,box8,box9),
-  mainColumn: winOptions(box1,box4,box7),
-  secondColumn:winOptions(box2,box5,box8),
-  thirdColumn:winOptions(box3,box6,box9)
-};
-
-// console.log(Object.values(choices).every(item => item)); // Checks if all object properties return true
-//The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
-// E.g  {a:1,b:2,c:3 }  ["a","b","c"]
-// console.log(Object.keys(choices).every((k) =>choices[k]))
-
-// console.log(...newData);
-
-if(choices.mainRow || choices.secondRow || choices.thirdRow || choices.mainColumn || choices.secondColumn || choices.thirdColumn)
-{
-  displayWinner.textContent = 'X is the winner';
-}
-
-// Switches the player
-currentPlayer = currentPlayer === "X" ? "O" : "X";
-this.textContent = currentPlayer;
+     // first column
+     if(cIndex==1){
+        console.log('Prima coloana')
+      }
+     // second column 
+     if(cIndex==2){
+       console.log('A doua coloana')
+     }
+       // second column 
+       if(cIndex==3){
+        console.log('A treia coloana')
+      }
 
 
 
-}
+
+        // first column
+     if(rIndex==1){
+      console.log('Prima linie')
+   }
+   // second column 
+   if(rIndex==2){
+     console.log('A doua linie')
+   }
+     // second column 
+     if(rIndex==3){
+      console.log('A treia linie')
+    }
 
 
-choices.forEach((choice)=>{
-  choice.addEventListener('click',comboHandler,{once:true}) // once means not trigger the event again;
-})
 
 
-clearBtn.addEventListener('click',clear);
+  
+
+
+ }
+
+  // rows.forEach(el=>{
+  //    console.log(el);
+  // });
+
+console.log(localStorage.getItem('combo'))

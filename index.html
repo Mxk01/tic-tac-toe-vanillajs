@@ -8,32 +8,24 @@
     <title></title>
   </head>
   <body>
+    <span id="turn__message"></span>
+   <div id="gameBoard__container">
+   <div class="row" data-column-index="1"  data-row-index="1" onclick="getBoxCoordinates(this)"></div>
+   <div  class="row" data-column-index="2"  data-row-index="1" onclick="getBoxCoordinates(this)"></div>
+   <div  class="row" data-column-index="3"  data-row-index="1" onclick="getBoxCoordinates(this)"></div>
+  
 
-    <div id="main-container">
+   <div   class="row" data-column-index="1"  data-row-index="2" onclick="getBoxCoordinates(this)"></div>
+   <div    class="row" data-column-index="2"  data-row-index="2" onclick="getBoxCoordinates(this)"></div>
+   <div     class="row" data-column-index="3"  data-row-index="2" onclick="getBoxCoordinates(this)"></div>
 
-  <h1 class="display-winner">
-  </h1>
-  <!-- <button type="button" id="switch" name="button">Switch</button> -->
-  <button type="button" id="btn" name="button">Clear</button>
-    <div class="row">
-      <div class="choice choice-1"></div>
-      <div class="choice choice-2"></div>
-      <div class="choice choice-3"></div>
-    </div>
 
-    <div class="row">
-      <div class="choice choice-4"></div>
-      <div class="choice choice-5"></div>
-      <div class="choice choice-6"></div>
-    </div>
+   <div  class="row" data-column-index="1"  data-row-index="3" onclick="getBoxCoordinates(this)"></div>
+   <div   class="row" data-column-index="2"  data-row-index="3" onclick="getBoxCoordinates(this)"></div>
+   <div  class="row" data-column-index="3"  data-row-index="3" onclick="getBoxCoordinates(this)"></div>
 
-    <div class="row">
-      <div class="choice choice-7"></div>
-      <div class="choice choice-8"></div>
-      <div class="choice choice-9"></div>
-    </div>
-  </div>
-
+   </div>
+ 
 <script src="app.js"></script>
   </body>
 </html>

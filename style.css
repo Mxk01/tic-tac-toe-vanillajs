@@ -1,59 +1,36 @@
-.row
-{
-  display:flex;
-  flex-direction: row;
-}
-
-.row .choice
-{
-  background-color: #3c6382 ;
-  width:7vw;
-  height:10vh;
-  margin:5px;
-  padding:1rem;
-  font-size:3rem;
+body {
+   height: 100%;
   display:flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Alata', sans-serif;
-  transition: background-color 0.3s ease;
-  color:#b8e994;
-  font-weight:200;
-
-}
-
-.row .choice:hover
-{
-  background-color:#079992;
-  cursor:pointer;
-}
-#main-container{
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+}
+.disabledRow {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
-#btn
-{
-  padding:1rem;
-  border:none;
-  background-color:orange;
-  color:white;
-  width:350px;
-  margin-bottom:20px;
-  outline:none;
+
+#gameBoard__container{
+  margin-top:3rem;
+   width:400px;
+  height:400px;
+   display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+   
+}
+#gameBoard__container > div {
+  background-color: rgb(26, 209, 255);
+  width:200px;
+  height:200px;
+  cursor:pointer;
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+ 
 }
 
-body
-{
-  background-color:#192a56;
-}
 
-.display-winner
-{
-  color:white;
-    font-family: 'Alata', sans-serif;
+#gameBoard__container > div:hover {
+background-color: rgb(255, 230, 0);
+
 }
